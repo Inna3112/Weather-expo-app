@@ -68,7 +68,13 @@
       "singleline": {
         "delimiter": "comma"
       }
-    }]
+    }],
+    "react/style-prop-object": [
+      "error",
+      {
+        "allow": ["StatusBar"]
+      }
+    ]
   },
   "overrides": [
     { //https://redux-toolkit.js.org/usage/immer-reducers#linting-state-mutations

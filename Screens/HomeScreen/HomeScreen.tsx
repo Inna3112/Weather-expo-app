@@ -1,22 +1,34 @@
-import { View } from 'react-native';
-import { useTranslation } from 'react-i18next';
+import React from 'react';
+import {
+  Image, View,
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
 
 import getStyles from './styles';
 
-import AppText from '@/components/AppText/AppText';
-import { useAppSelector } from '@/store/hooks/useApp';
-import selectCurrentTheme from '@/store/slices/theme/selectors';
+import Forecast from '@/Screens/HomeScreen/components/Forecast/Forecast';
+import Search from '@/Screens/HomeScreen/components/Search/Search';
+import Stats from '@/Screens/HomeScreen/components/Stats/Stats';
+
+const bg = require('../../assets/images/bg.png');
 
 export default function HomeScreen() {
-  const { t } = useTranslation();
-  const theme = useAppSelector(selectCurrentTheme);
-  const styles = getStyles({ theme });
+  const styles = getStyles();
 
   return (
     <View style={styles.container}>
-      <AppText>
-        {`${t('home.pageTitle')}`}
-      </AppText>
+      <StatusBar style="light" />
+      <Image
+        style={styles.bgImage}
+        blurRadius={70}
+        source={bg}
+      />
+      <SafeAreaView style={styles.areaView}>
+        <Search />
+        <Forecast />
+        <Stats />
+      </SafeAreaView>
     </View>
   );
 }

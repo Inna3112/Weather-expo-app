@@ -1,13 +1,20 @@
 import { StyleSheet } from 'react-native';
 
-import type { ColorSchemeName } from 'react-native/Libraries/Utilities/Appearance';
-
 import Colors from '@/constants/Colors';
 
-const getStyles = ({ theme }:{ theme?: ColorSchemeName }) => StyleSheet.create({
+const getStyles = () => StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors[theme ?? 'light'].background,
+    position: 'relative',
+    backgroundColor: Colors.light.background,
+  },
+  bgImage: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
+  areaView: {
+    flex: 1,
   },
 });
 
