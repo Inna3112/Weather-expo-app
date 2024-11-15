@@ -1,7 +1,7 @@
 export const Colors = {
   light: {
     text: '#11181C',
-    background: '#2A6A6AFF',
+    background: '#2A6A6A',
     baseBorderColor: '#e3e3e3',
     green: '#40BF80',
     tint: '#222',
@@ -12,7 +12,7 @@ export const Colors = {
     bgWhite: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
     bgBlack: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
     Switch: {
-      trackColor: { true: '#2A6A6AFF', false: '#fff' },
+      trackColor: { true: '#2A6A6A', false: '#fff' },
       thumbColor: '#fff',
     },
 

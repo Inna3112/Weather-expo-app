@@ -57,7 +57,11 @@ function Search() {
             {showRecentLocations ? (
               <View style={styles.locationsList}>
                 {recentLocations.map((recentLocation) => (
-                  <TouchableOpacity style={styles.location} onPress={() => onRecentLocationPress(recentLocation)}>
+                  <TouchableOpacity
+                    key={recentLocation}
+                    style={styles.location}
+                    onPress={() => onRecentLocationPress(recentLocation)}
+                  >
                     <Ionicons name="location" color="gray" size={24} />
                     <AppText>{recentLocation}</AppText>
                   </TouchableOpacity>
@@ -73,7 +77,7 @@ function Search() {
           <Ionicons name="search-outline" color="white" size={24} />
         </TouchableOpacity>
       </View>
-      <AppText style={styles.error}>{error ? 'Failed to fetch weather data' : ''}</AppText>
+      <AppText style={styles.error}>{error}</AppText>
     </View>
   );
 }

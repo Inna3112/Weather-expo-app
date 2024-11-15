@@ -19,7 +19,7 @@ export const fetchWeather = createAsyncThunk<IWeatherResponse, IWeatherParams>(
       const data: IWeatherResponse = await response.json();
       return data;
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue('Failed to fetch weather data');
     }
   },
 );
