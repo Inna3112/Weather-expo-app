@@ -19,7 +19,7 @@ const getStyles = () => StyleSheet.create({
   textInput: {
     paddingLeft: 16,
     paddingRight: 'auto',
-    height: 40,
+    height: 50,
     color: Colors.light.bgWhite(),
     alignSelf: 'flex-start',
   },

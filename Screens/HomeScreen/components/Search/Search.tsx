@@ -47,6 +47,7 @@ function Search() {
             style={styles.textInput}
             value={location}
             onChangeText={(text) => dispatch(setLocation(text))}
+            onSubmitEditing={() => onPress(location)}
           />
         ) : (
           <View style={styles.recentLocations}>

@@ -21,6 +21,7 @@ const getStyles = () => StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end',
     paddingRight: 16,
+    paddingTop: 8,
   },
   deg: {
     color: Colors.light.bgWhite(),
