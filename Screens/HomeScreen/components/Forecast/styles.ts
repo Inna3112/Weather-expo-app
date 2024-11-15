@@ -13,7 +13,7 @@ const getStyles = () => StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 36,
   },
-  country: {
+  weatherText: {
     color: Colors.light.bgWhite(),
     fontSize: 24,
   },

@@ -3,12 +3,11 @@ import { StyleSheet } from 'react-native';
 import Colors from '@/constants/Colors';
 
 const getStyles = () => StyleSheet.create({
-  moreDetailsBtn: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  moreDetails: {
+  text: {
     color: Colors.light.bgWhite(),
+  },
+  disabled: {
+    color: Colors.light.tabIconDefault,
   },
 });
 

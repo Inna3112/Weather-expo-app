@@ -12,7 +12,7 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 
-import theme from './slices/theme/slice';
+import weather from './slices/weather/slice';
 
 const persistConfig = {
   key: 'root',
@@ -24,7 +24,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(
   persistConfig,
   combineReducers({
-    theme,
+    weather,
   }),
 );
 

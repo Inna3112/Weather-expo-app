@@ -11,9 +11,9 @@ const getStyles = () => StyleSheet.create({
     marginTop: 16,
   },
   textInputContainer: {
-    display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
     borderRadius: 10000,
   },
   textInput: {
@@ -23,22 +23,28 @@ const getStyles = () => StyleSheet.create({
     color: Colors.light.bgWhite(),
     alignSelf: 'flex-start',
   },
+  error: {
+    color: Colors.light.error,
+    paddingTop: 4,
+  },
   button: {
     borderRadius: 10000,
     padding: 6,
     margin: 2,
     backgroundColor: Colors.light.bgWhite(0.3),
   },
-  flexEnd: {
-    justifyContent: 'flex-end',
+  transparentBg: {
     backgroundColor: 'transparent',
   },
-  spaceBetween: {
-    justifyContent: 'space-between',
+  whiteBg: {
     backgroundColor: Colors.light.bgWhite(0.2),
+  },
+  recentLocations: {
+    width: '60%',
   },
   locationsList: {
     position: 'absolute',
+    top: 30,
     width: '100%',
     borderRadius: 4,
     backgroundColor: Colors.light.bgWhite(0.8),

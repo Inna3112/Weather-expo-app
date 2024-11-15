@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   Image,
   View,
@@ -6,32 +6,55 @@ import {
 
 import getStyles from './styles';
 
-import AppText from '@/components/AppText/AppText';
+import type { IForecast } from '@/Screens/HomeScreen/components/Forecast/interfaces/IForecast';
 
-const partlyCloudy = require('../../../../assets/images/partlycloudy.png');
+import Switch from '@/components/AppText/AppText';
+import getIcon from '@/utils/getIcon';
 
-function Forecast() {
+const sun = require('../../../../assets/images/sun2.png');
+
+function Forecast({
+  icon, city, hasWeather, temperature, description,
+}: IForecast) {
   const styles = getStyles();
+  const formatedTemperature = useMemo(() => {
+    if (temperature) {
+      return `${temperature}°`;
+    }
+
+    return temperature;
+  }, [temperature]);
+
+  const capitalizeDescription = useMemo(() => {
+    if (description) {
+      return description.charAt(0).toUpperCase() + description.slice(1);
+    }
+
+    return description;
+  }, [description]);
 
   return (
     <View style={styles.forecast}>
-      <AppText style={styles.city}>
-        London,
-        <AppText style={styles.country}> United Kingdom</AppText>
-      </AppText>
+      <Switch style={styles.city}>
+        {hasWeather ? city : 'Enter the city'}
+      </Switch>
       <View style={styles.weatherImgContainer}>
         <Image
           style={styles.weatherImg}
-          source={partlyCloudy}
+          source={hasWeather ? getIcon(icon) : sun}
         />
       </View>
       <View style={styles.degreeContainer}>
-        <AppText style={styles.degree}>
-          23°
-        </AppText>
-        <AppText style={styles.country}>
-          Partly Cloudy
-        </AppText>
+        {hasWeather ? (
+          <>
+            <Switch style={styles.degree}>
+              {formatedTemperature}
+            </Switch>
+            <Switch style={styles.weatherText}>
+              {capitalizeDescription}
+            </Switch>
+          </>
+        ) : null}
       </View>
     </View>
   );

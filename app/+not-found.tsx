@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import { Link, Stack } from 'expo-router';
 
-import AppText from '@/components/AppText/AppText';
+import Switch from '@/components/AppText/AppText';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,9 +21,9 @@ export default function NotFoundScreen() {
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
       <View style={styles.container}>
-        <AppText>This screen not exist.</AppText>
+        <Switch>This screen not exist.</Switch>
         <Link href="/" style={styles.link}>
-          <AppText>Go to home screen!</AppText>
+          <Switch>Go to home screen!</Switch>
         </Link>
       </View>
     </>
